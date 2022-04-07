@@ -5,12 +5,12 @@ import time
 import webbrowser
 import git
 import webbrowser
+import requests
 clear = lambda: os.system('cls')
 file_path = os.path.dirname(os.path.realpath(__file__))
 
-
-with open(f"{file_path}\products.json", "r") as f:
-    data = json.load(f)
+json_url = requests.get('https://raw.githubusercontent.com/utkucelal/utku-launcher/main/products.json')
+data = json_url.json()
 
 print(""" 
 
