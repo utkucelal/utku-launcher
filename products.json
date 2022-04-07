@@ -1,0 +1,5 @@
+{ 
+    "1" : {"name": "qr-code", "path1": "qr", "path2": "qr.py"},
+    "2" : { "name": "guncel-kur-izleyici", "path1": "guncel-kur-izleyici", "path2": "guncel-kur-izleyici.py", "url": "https://github.com/utkucelal/guncel-kur-izleyici.git"},
+    "3" : {"name": "video-indirici", "path1": "video-indirici", "path2": "yt.py", "url": "https://github.com/utkucelal/video-indirici.git"}
+        }
