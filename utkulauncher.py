@@ -9,8 +9,12 @@ import requests
 clear = lambda: os.system('cls')
 file_path = os.path.dirname(os.path.realpath(__file__))
 
-json_url = requests.get('https://raw.githubusercontent.com/utkucelal/utku-launcher/main/products.json')
-data = json_url.json()
+try:
+  json_url = requests.get('https://raw.githubusercontent.com/utkucelal/utku-launcher/main/products.json')
+  data = json_url.json()
+except:
+    print("ürünlere bağlanılamadı internet bağlantınızı kontrol edin")
+    time.sleep(10)
 
 print(""" 
 
