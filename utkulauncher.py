@@ -93,7 +93,7 @@ if answ== "sil":
     clear()
     subprocess.call(f"{os.path.realpath(__file__)}", shell=True)
 
-if answ== ("güncelle" or "yeniden yükle"):
+if answ== "güncelle":
     clear()
     subprocess.call(f"RMDIR {file_path}\{path1} /S /Q", shell=True)
     git.Git(file_path).clone(url)
