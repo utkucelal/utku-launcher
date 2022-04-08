@@ -73,7 +73,7 @@ if str(file_check) == "False":
         except Exception as e:
             print(e)
 
-answ= input(f'{name} adlı programa ne yapmak isiyorsunuz? (aç\sil\güncelle\yeniden yükle\iptal): ')
+answ= input(f'{name} adlı programa ne yapmak isiyorsunuz? (aç\sil\güncelle\yeniden-yükle\iptal): ')
 if answ=="aç":
      clear()
      subprocess.call(f"{scr_loc}", shell=True)
@@ -93,9 +93,11 @@ if answ== "sil":
     clear()
     subprocess.call(f"{os.path.realpath(__file__)}", shell=True)
 
-if answ== "güncelle":
+if answ== "güncelle" or "yeniden-yükle":
     clear()
     subprocess.call(f"RMDIR {file_path}\{path1} /S /Q", shell=True)
     git.Git(file_path).clone(url)
     print(f"dosyalar {answ}ndi")
+    time.sleep(5)
+    subprocess.call(f"{os.path.realpath(__file__)}", shell=True)
     
