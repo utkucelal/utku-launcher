@@ -73,14 +73,29 @@ if str(file_check) == "False":
         except Exception as e:
             print(e)
 
-answ= input(f'açılacak script {name} \n dosya adı: {path2} \n onaylıyor musunuz? (evet/hayır): ')
-if answ=="evet":
+answ= input(f'{name} adlı programa ne yapmak isiyorsunuz? (aç\sil\güncelle\yeniden yükle\iptal): ')
+if answ=="aç":
      clear()
      subprocess.call(f"{scr_loc}", shell=True)
      time.sleep(40)
 
-if answ== "hayır":
-    print("script iptal edildi 5 sn içinde yeniden başlıyor")
+if answ== "iptal":
+    print("program iptal edildi 5 sn içinde yeniden başlıyor")
     time.sleep(5)
     clear()
     subprocess.call(f"{os.path.realpath(__file__)}", shell=True)
+
+if answ== "sil":
+    clear()
+    subprocess.call(f"RMDIR {file_path}\{path1} /S /Q", shell=True)
+    print("silme başarılı tekrar başlatılıyor")
+    time.sleep(5)
+    clear()
+    subprocess.call(f"{os.path.realpath(__file__)}", shell=True)
+
+if answ== ("güncelle" or "yeniden yükle"):
+    clear()
+    subprocess.call(f"RMDIR {file_path}\{path1} /S /Q", shell=True)
+    git.Git(file_path).clone(url)
+    print(f"dosyalar {answ}ndi")
+    
